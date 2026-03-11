@@ -14,7 +14,7 @@ score = 0
 # Main loop
 while True:
     # Handle micro:bit shake
-    if accelerometer.was_gesture('shake'):
+    if accelerometer.was_gesture("shake"):
         random_number = random.randint(0, 2)
 
         # Rock
@@ -51,7 +51,7 @@ while True:
     if button_b.was_pressed():
         # Display score
         display.clear()
-        display.scroll('Score: ' + str(score))
+        display.scroll("Score: " + str(score))
 
         # Reset display
         display.show(Image.HAPPY)
