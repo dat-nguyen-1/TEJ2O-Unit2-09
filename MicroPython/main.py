@@ -8,11 +8,7 @@ from microbit import *
 import random
 
 # initialize image constants
-SCISSORS = Image("99009:"
-                 "99090:"
-                 "00900:"
-                 "99090:"
-                 "99009")
+SCISSORS = Image("99009:" "99090:" "00900:" "99090:" "99009")
 
 # initialize variables
 random_number = None
