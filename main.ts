@@ -6,7 +6,7 @@
 */
 
 // initialize variables
-let randomNumber: number = null
+let randomNumber: number = -1
 let score: number = 0
 
 input.onGesture(Gesture.Shake, function() {
