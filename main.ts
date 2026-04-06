@@ -5,52 +5,52 @@
  * This program will run Rock, Paper, Scissors.
 */
 
-// Initialize variables
+// initialize variables
 let randomNumber: number = null
 let score: number = 0
 
 input.onGesture(Gesture.Shake, function() {
-    // Pick a random integer from range (0, 2)
+    // pick a random integer from range (0, 2)
     randomNumber = randint(0, 2)
 
-    // Paper
+    // paper
     if (randomNumber == 0) {
         basic.showIcon(IconNames.Square) 
     }
 
-    // Rock
+    // rock
     if (randomNumber == 1) {
         basic.showIcon(IconNames.SmallSquare)
     }
 
-    // Scissors
+    // scissors
     if (randomNumber == 2) {
         basic.showIcon(IconNames.Scissors)
     }
 
-    // Wait 5 s
+    // wait 5 s
     basic.pause(5000)
 
-    // Reset display
+    // reset display
     basic.showIcon(IconNames.Happy)
 })
 
 input.onButtonPressed(Button.A, function() {
-    // Increment score by 1
+    // increment score by 1
     score += 1
 
-    // Display check mark
+    // display check mark
     basic.showIcon(IconNames.Yes)
 
-    // Reset display
+    // reset display
     basic.showIcon(IconNames.Happy)
 })
 
 input.onButtonPressed(Button.B, function() {
-    // Display score
+    // display score
     basic.clearScreen()
     basic.showString("Score: " + (score).toString(), 100)
 
-    // Reset display
+    // reset display
     basic.showIcon(IconNames.Happy)
 })
