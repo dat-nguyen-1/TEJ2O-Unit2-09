@@ -7,51 +7,62 @@ This module will run Rock, Paper, Scissors.
 from microbit import *
 import random
 
-# Initialize variables
+# initialize image constants
+SCISSORS = Image("99009:"
+                 "99090:"
+                 "00900:"
+                 "99090:"
+                 "99009")
+
+# initialize variables
 random_number = None
 score = 0
 
-# Main loop
+# initialize display
+display.show(Image.HAPPY)
+
+# main loop
 while True:
-    # Handle micro:bit shake
+    # handle shake
     if accelerometer.was_gesture("shake"):
+        # generate random number from 0 to 2
         random_number = random.randint(0, 2)
 
-        # Rock
+        # rock
         if random_number == 0:
             display.show(Image.SQUARE_SMALL)
 
-        # Paper
+        # paper
         if random_number == 1:
             display.show(Image.SQUARE)
 
-        # Scissors
+        # scissors
         if random_number == 2:
-            display.show(Image.SCISSORS)
+            display.show(SCISSORS)
 
-        # Wait 5000 ms
+        # wait 5000 ms
         sleep(5000)
 
-        # Reset display
+        # reset display
         display.show(Image.HAPPY)
 
-    # Handle button A press
+    # handle button A press
     if button_a.was_pressed():
-        # Increment score by 1
+        # increment score by 1
         score += 1
 
-        # Display check mark for 250 ms
+        # display check mark for 250 ms
         display.show(Image.YES)
         sleep(250)
 
-        # Reset display
+        # reset display
         display.show(Image.HAPPY)
 
-    # Handle button B press
+    # handle button B press
     if button_b.was_pressed():
-        # Display score
+        # display score
         display.clear()
         display.scroll("Score: " + str(score))
 
-        # Reset display
+        # reset display
         display.show(Image.HAPPY)
