@@ -9,6 +9,9 @@
 let randomNumber: number = -1
 let score: number = 0
 
+// initialize display
+basic.showIcon(IconNames.Happy)
+
 input.onGesture(Gesture.Shake, function() {
     // pick a random integer from range (0, 2)
     randomNumber = randint(0, 2)
